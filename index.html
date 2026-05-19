@@ -3,405 +3,749 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>శ్రీ ధన్వంతరి మహా పిరమిడ్ ధ్యాన కేంద్రం</title>
+    <title>Sri Dhanvantari Maha Pyramid - Nellore</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Noto+Sans+Telugu:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        telugu: ['Noto Sans Telugu', 'sans-serif'],
+                        sans: ['Poppins', 'sans-serif'],
+                        serif: ['Cinzel', 'serif'],
+                    },
+                    colors: {
+                        gold: {
+                            50: '#fffdf0',
+                            100: '#fef9c3',
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        },
+                        cosmic: {
+                            900: '#0b0f19',
+                            950: '#05070c',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        :root {
-            --primary-color: #ff9933; 
-            --secondary-color: #138808; 
-            --dark-color: #000080; 
-            --maroon: #b71c1c; 
-            --light-bg: #fffbf7;
+        .glow-gold {
+            text-shadow: 0 0 10px rgba(245, 158, 11, 0.6), 0 0 20px rgba(245, 158, 11, 0.4);
         }
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        .bg-glass {
+            background: rgba(5, 7, 12, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(245, 158, 11, 0.15);
         }
-        body {
-            background-color: #f7f9fa;
-            color: #333;
-            line-height: 1.6;
-            padding: 10px;
+        html {
+            scroll-behavior: smooth;
         }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-            border: 2px solid #ffe0b2;
+        .text-glow-white {
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
         }
-        .header {
-            background: linear-gradient(135deg, #fff3e0, #ffffff, #e8f5e9);
-            padding: 25px 20px;
-            text-align: center;
-            border-bottom: 4px solid var(--primary-color);
+        .master-frame {
+            box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
+            border: 2px solid rgba(245, 158, 11, 0.6);
         }
-        .top-logos {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-            padding: 0 10px;
-        }
-        .logo-box {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: white;
-            padding: 4px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            border: 2px solid var(--primary-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-        .logo-box img {
+        .editable-input {
+            background: transparent;
+            border-bottom: 1.5px dashed rgba(245, 158, 11, 0.3);
+            transition: all 0.3s ease;
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
         }
-        .logo-title {
-            font-size: 11px;
-            font-weight: bold;
-            color: var(--maroon);
-            margin-top: 2px;
+        .editable-input:focus {
+            outline: none;
+            border-bottom: 1.5px solid #fbbf24;
+            background: rgba(255, 255, 255, 0.05);
+            padding-left: 4px;
+            padding-right: 4px;
+            border-radius: 4px;
         }
-        .logo-wrapper {
-            text-align: center;
-        }
-        .header h1 {
-            color: var(--maroon);
-            font-size: 24px;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        .header p {
-            color: var(--dark-color);
-            font-size: 15px;
-            font-weight: 600;
-        }
-        .content {
-            padding: 20px;
-        }
-        .info-tag {
-            display: block;
-            background: #fff3e0;
-            color: #e65100;
-            padding: 8px;
-            border-radius: 8px;
-            font-size: 12px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            text-align: center;
-            border: 1px dashed #ffe0b2;
-        }
-        .section {
-            margin-bottom: 25px;
-            padding: 20px;
-            border-radius: 15px;
-            background: var(--light-bg);
-            border-left: 6px solid var(--primary-color);
-        }
-        .section-title {
-            color: var(--maroon);
-            margin-bottom: 12px;
-            font-size: 20px;
-            border-bottom: 2px solid #ffe0b2;
-            padding-bottom: 6px;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .photo-gallery {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin: 15px 0;
-        }
-        .photo-card {
-            background: white;
-            border: 1px solid #ffe0b2;
-            border-radius: 10px;
-            padding: 8px;
-            text-align: center;
-        }
-        .photo-slot {
-            width: 100%;
-            height: 140px;
-            background: #f0f0f0;
-            border-radius: 8px;
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            border: 1px dashed #ccc;
-        }
-        .photo-slot img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .photo-caption {
-            font-size: 13px;
-            font-weight: bold;
-            color: #555;
-        }
-        .live-box {
-            background: #e3f2fd;
-            border-left-color: var(--dark-color);
-        }
-        .live-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background: #d32f2f;
-            color: white;
-            text-decoration: none;
-            padding: 12px 20px;
-            border-radius: 8px;
-            font-weight: bold;
-            margin-top: 12px;
-            font-size: 16px;
-            box-shadow: 0 4px 12 rgba(211,47,47,0.3);
-        }
-        .live-pulse {
-            width: 10px;
-            height: 10px;
-            background: white;
-            border-radius: 50%;
-            animation: pulse 1.5s infinite;
-        }
-        @keyframes pulse {
-            0% { transform: scale(0.8); opacity: 0.5; }
-            50% { transform: scale(1.2); opacity: 1; }
-            100% { transform: scale(0.8); opacity: 0.5; }
-        }
-        .timer-container {
-            text-align: center;
-            background: #e8f5e9;
-            border-left-color: var(--secondary-color);
-        }
-        .timer-display {
-            font-size: 46px;
-            font-weight: bold;
-            color: var(--dark-color);
-            margin: 15px 0;
-            font-family: monospace;
-            background: white;
-            display: inline-block;
-            padding: 5px 25px;
-            border-radius: 10px;
-            border: 2px solid #c8e6c9;
-        }
-        .btn-group {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-        button {
-            padding: 10px 18px;
-            border: none;
-            border-radius: 6px;
-            background-color: var(--primary-color);
-            color: white;
-            font-weight: bold;
-            cursor: pointer;
-            font-size: 14px;
-        }
-        button.stop-btn { background-color: #555; }
-        .bank-details {
-            background: #fffde7;
-            border-left-color: #fbc02d;
-        }
-        .bank-box {
-            margin-top: 12px;
-            background: white;
-            padding: 15px;
-            border-radius: 10px;
-            border: 1px solid #fff59d;
-        }
-        .bank-box p {
-            margin-bottom: 6px;
-            font-size: 14px;
-            border-bottom: 1px dashed #f5f5f5;
-            padding-bottom: 4px;
-        }
-        .footer {
-            text-align: center;
-            padding: 20px;
-            background: #1a1a1a;
-            color: #bbb;
-            font-size: 13px;
-            border-top: 4px solid var(--secondary-color);
-        }
-        .editable-text { outline: none; }
-        .editable-text:focus { background: #fff; border: 1px dashed var(--primary-color); }
     </style>
 </head>
-<body>
+<body class="bg-cosmic-950 text-slate-100 font-sans selection:bg-gold-500 selection:text-cosmic-950 overflow-x-hidden">
 
-<div class="container">
-    
-    <div class="header">
-        <div class="top-logos">
-            <div class="logo-wrapper">
-                <div class="logo-box">
-                    <img src="NEST.jpeg" alt="ట్రస్ట్ లోగో">
-                </div>
-                <div class="logo-title">ధన్వంతరి ట్రస్ట్</div>
-            </div>
-            <div class="logo-wrapper">
-                <div class="logo-box">
-                    <img src="patriji.jpeg" alt="బ్రహ్మర్షి పత్రీజీ" onerror="this.src='https://via.placeholder.com/150?text=Patriji+Photo'">
-                </div>
-                <div class="logo-title">బ్రహ్మర్షి పత్రీజీ</div>
-            </div>
-        </div>
-        <h1 class="editable-text" contenteditable="true">శ్రీ ధన్వంతరి మహా పిరమిడ్ ధ్యాన కేంద్రం</h1>
-        <p class="editable-text" contenteditable="true">నెల్లూరు, ఆంధ్రప్రదేశ్ (రిజిస్టర్డ్ ఛారిటబుల్ ట్రస్ట్)</p>
+    <div class="fixed inset-0 w-full h-full -z-20 overflow-hidden pointer-events-none">
+        <img id="pyramid-bg-img" 
+             src="pyramid1.jpeg" 
+             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?q=80&w=1600&auto=format&fit=crop';"
+             class="w-full h-full object-cover filter brightness-[0.35] saturate-[0.85] contrast-[1.10] transition-all duration-700" 
+             alt="Sri Dhanvantari Maha Pyramid Background">
+        <div class="absolute inset-0 bg-gradient-to-b from-cosmic-950/40 via-cosmic-950/70 to-cosmic-950"></div>
     </div>
 
-    <div class="content">
-        <span class="info-tag">💡 గమనిక: మార్పులు చేయాలనుకుంటే ఏ టెక్స్ట్‌నైనా నేరుగా క్లిక్ చేసి ఎడిట్ చేయవచ్చు!</span>
+    <div class="fixed top-4 left-1/2 -translate-x-1/2 z-50">
+        <button onclick="toggleLanguage()" class="bg-gold-500 hover:bg-gold-600 text-cosmic-950 font-bold py-1.5 px-4 rounded-full shadow-lg flex items-center gap-2 transition-all transform hover:scale-105 text-sm">
+            <i class="fa-solid fa-language text-base"></i>
+            <span id="lang-btn-text">English</span>
+        </button>
+    </div>
 
-        <div class="section">
-            <h2 class="section-title">✨ ధ్యాన మహా యజ్ఞం</h2>
-            <p class="editable-text" contenteditable="true">సమస్త మానవాళి శ్రేయస్సు కొరకు, సంపూర్ణ ఆరోగ్య ప్రాప్తి కొరకు మన కేంద్రంలో ప్రతిరోజూ ఉచిత సమూహ ధ్యాన సాధన మరియు ఆన్‌లైన్ సత్సంగాలు నిర్వహించబడుతున్నాయి. పిరమిడ్ శక్తి ద్వారా అపారమైన మానసిక ప్రశాంతతను పొందండి.</p>
-        </div>
+    <div class="fixed bottom-4 left-4 z-50 flex flex-col sm:flex-row gap-2">
+        <button onclick="document.getElementById('temple-image-file').click()" class="bg-slate-950/90 hover:bg-slate-900 text-gold-400 border border-gold-500/30 font-semibold py-2 px-4 rounded-full shadow-lg flex items-center gap-2 transition-all transform hover:scale-105 text-xs backdrop-blur-md">
+            <i class="fa-solid fa-camera"></i>
+            <span class="lang-text" data-te="బ్యాక్‌గ్రౌండ్ మార్చండి" data-en="Change Background">బ్యాక్‌గ్రౌండ్ మార్చండి</span>
+        </button>
+        <button id="reset-img-btn" onclick="resetTempleImage()" class="bg-red-950/90 hover:bg-red-900 text-red-200 border border-red-500/30 py-2 px-4 rounded-full shadow-lg flex items-center gap-2 transition-all transform hover:scale-105 text-xs backdrop-blur-md hidden">
+            <i class="fa-solid fa-trash-can"></i>
+            <span class="lang-text" data-te="బ్యాక్‌గ్రౌండ్ రీసెట్" data-en="Reset Background">బ్యాక్‌గ్రౌండ్ రీసెట్</span>
+        </button>
+    </div>
+    
+    <input type="file" id="temple-image-file" class="hidden" accept="image/*" onchange="handleImageUpload(event, 'bg')">
+    <input type="file" id="left-master-file" class="hidden" accept="image/*" onchange="handleImageUpload(event, 'left')">
+    <input type="file" id="right-master-file" class="hidden" accept="image/*" onchange="handleImageUpload(event, 'right')">
+    <input type="file" id="satsang-master-file" class="hidden" accept="image/*" onchange="handleImageUpload(event, 'satsang')">
+    <input type="file" id="logo-image-file" class="hidden" accept="image/*" onchange="handleImageUpload(event, 'logo')">
+    <input type="file" id="qr-image-file" class="hidden" accept="image/*" onchange="handleImageUpload(event, 'qr')">
 
-        <div class="section" style="border-left-color: var(--secondary-color);">
-            <h2 class="section-title">📸 చిత్ర మాలిక (Gallery)</h2>
-            <div class="photo-gallery">
-                <div class="photo-card">
-                    <div class="photo-slot">
-                        <img src="patriji_grand.jpeg" alt="బ్రహ్మర్షి పత్రీజీ" onerror="this.src='https://via.placeholder.com/150?text=Patriji+Photo'">
-                    </div>
-                    <div class="photo-caption">బ్రహ్మర్షి పత్రీజీ</div>
+    <header class="relative min-h-screen flex flex-col items-center justify-start text-center px-4 pt-4 pb-16 overflow-hidden">
+        <div class="absolute w-72 h-72 bg-amber-500/10 rounded-full blur-3xl top-1/4 left-1/4 animate-pulse"></div>
+        <div class="absolute w-72 h-72 bg-teal-500/10 rounded-full blur-3xl bottom-1/4 right-1/4 animate-pulse" style="animation-delay: 2s;"></div>
+
+        <div class="w-full max-w-6xl mx-auto flex flex-row justify-between items-center gap-2 px-2 pt-16 lg:pt-8 mb-4 lg:absolute lg:top-4 lg:inset-x-0 z-20">
+            <div class="flex flex-col items-center gap-1 group relative flex-shrink-0">
+                <div class="w-14 h-14 sm:w-18 sm:h-18 md:w-24 md:h-24 rounded-full overflow-hidden master-frame bg-cosmic-900 relative">
+                    <img id="left-master-img" src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=300&auto=format&fit=crop" class="w-full h-full object-cover" alt="Brahmarshi Patriji">
+                    <button onclick="document.getElementById('left-master-file').click()" class="absolute inset-0 bg-cosmic-950/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-gold-400 text-xs font-semibold">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </button>
                 </div>
-                <div class="photo-card">
-                    <div class="photo-slot">
-                        <img src="pyramid.jpeg" alt="మха పిరమిడ్" onerror="this.src='https://via.placeholder.com/150?text=Pyramid+Photo'">
-                    </div>
-                    <div class="photo-caption">మహా పిరమిడ్ హాల్</div>
+                <div class="bg-slate-950/80 px-2 py-0.5 rounded-full border border-gold-500/20 backdrop-blur-sm">
+                    <p class="text-[8px] md:text-[10px] font-bold text-amber-200 tracking-wider uppercase lang-text" data-te="బ్రహ్మర్షి పత్రీజీ" data-en="Brahmarshi Patriji">బ్రహ్మర్షి పత్రీజీ</p>
+                </div>
+            </div>
+
+            <div class="flex-1 mx-2 text-center self-center py-2 overflow-hidden flex flex-col items-center gap-2">
+                <div class="relative group w-14 h-14 sm:w-20 sm:h-20 rounded-full bg-slate-950/80 border border-gold-500/30 flex items-center justify-center overflow-hidden shadow-lg backdrop-blur-sm">
+                    <img id="logo-img" src="NEST.jpg" class="w-full h-full object-cover" alt="Temple Logo">
+                    <button onclick="document.getElementById('logo-image-file').click()" class="absolute inset-0 bg-cosmic-950/90 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-gold-400 text-[9px] font-bold">
+                        <i class="fa-solid fa-upload"></i>
+                        <span>LOGO</span>
+                    </button>
+                </div>
+
+                <h1 id="title-telugu" class="text-base xs:text-lg sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-gold-400 to-amber-200 tracking-wider font-serif drop-shadow whitespace-nowrap">
+                    శ్రీ ధన్వంతరి మహా పిరమిడ్
+                </h1>
+                <h1 id="title-english" class="text-[11px] xs:text-[13px] sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-gold-400 to-amber-200 tracking-wider font-serif drop-shadow whitespace-nowrap hidden">
+                    Sri Dhanvantari Maha Pyramid
+                </h1>
+
+                <p id="trust-sub-telugu" class="text-[9px] sm:text-xs text-amber-200/90 font-bold uppercase tracking-wider font-telugu max-w-xl leading-normal mt-0.5">
+                    నేచురల్ ఎన్‌లైటెన్‌మెంట్ ఆఫ్ స్పిరిచువాలిటీ ట్రస్ట్ (NEST) యొక్క అనుబంధ సంస్థ
+                </p>
+                <p id="trust-sub-english" class="text-[8px] sm:text-[10px] text-amber-200/90 font-bold uppercase tracking-widest font-sans max-w-xl leading-normal mt-0.5 hidden">
+                    An entity of Natural Enlightenment of Spirituality Trust (NEST)
+                </p>
+            </div>
+
+            <div class="flex flex-col items-center gap-1 group relative flex-shrink-0">
+                <div class="w-14 h-14 sm:w-18 sm:h-18 md:w-24 md:h-24 rounded-full overflow-hidden master-frame bg-cosmic-900 relative">
+                    <img id="right-master-img" src="https://images.unsplash.com/photo-1606744824163-985d376605aa?q=80&w=300&auto=format&fit=crop" class="w-full h-full object-cover" alt="Divine Guide">
+                    <button onclick="document.getElementById('right-master-file').click()" class="absolute inset-0 bg-cosmic-950/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-gold-400 text-xs font-semibold">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </button>
+                </div>
+                <div class="bg-slate-950/80 px-2 py-0.5 rounded-full border border-gold-500/20 backdrop-blur-sm">
+                    <p class="text-[8px] md:text-[10px] font-bold text-amber-200 tracking-wider uppercase lang-text" data-te="దివ్య మార్గదర్శి" data-en="Divine Guide">దివ్య మార్గదర్శి</p>
                 </div>
             </div>
         </div>
 
-        <div class="section live-box">
-            <h2 class="section-title">🔴 ఆన్‌లైన్ లైవ్ సత్సంగం</h2>
-            <p><strong>సమయం:</strong> <span class="editable-text" contenteditable="true">ప్రతిరోజు సాయంత్రం 6:00 గంటలకు</span></p>
-            <p><strong>వేదిక:</strong> <span class="editable-text" contenteditable="true">యూట్యూబ్ లైవ్ ప్రసారం</span></p>
-            
-            <a href="https://www.youtube.com/@dhanvantaripyramid" target="_blank" class="live-btn">
-                <div class="live-pulse"></div>
-                సత్సంగంలో జాయిన్ అవ్వండి (Click Here)
+        <div class="w-full max-w-4xl mx-auto z-10 mt-12 sm:mt-16 lg:mt-48 px-4">
+            <div class="py-2.5 px-5 rounded-2xl bg-slate-950/65 backdrop-blur-md border border-gold-500/10 inline-block mx-auto shadow-xl">
+                <div id="addr-telugu" class="text-xs sm:text-sm md:text-base text-teal-300 font-semibold uppercase tracking-wider leading-relaxed font-telugu flex items-center justify-center gap-2 flex-wrap">
+                    <i class="fa-solid fa-location-dot text-gold-400"></i> 7వ వీధి, లెక్చరర్స కాలనీ, నార్త్ మాగుంట లేఔట్, நெల్లూరు - 524003.
+                </div>
+                <div id="addr-english" class="text-[11px] sm:text-xs md:text-sm text-teal-300 font-semibold uppercase tracking-wider leading-relaxed flex items-center justify-center gap-2 flex-wrap hidden">
+                    <i class="fa-solid fa-location-dot text-gold-400"></i> 7th Street, Lecturers Colony, North Magunta Layout, Nellore - 524003
+                </div>
+            </div>
+            <div class="h-[1px] w-32 bg-gradient-to-r from-transparent via-gold-500 to-transparent mx-auto my-8"></div>
+        </div>
+
+        <div id="hero-telugu" class="space-y-4 max-w-4xl mx-auto font-telugu z-10">
+            <blockquote class="text-xl md:text-2xl font-semibold text-amber-100 italic glow-gold py-2">
+                "ఆరోగ్యమే మహాభాగ్యం... ధ్యానమే పరమౌషధం!"
+            </blockquote>
+            <p class="text-slate-200 text-base md:text-lg max-w-2xl mx-auto leading-relaxed text-glow-white">
+                నెల్లూరులో వెలసిన దివ్యమైన ధ్యాన మందిరంలో అడుగుపెట్టండి... సంపూర్ణ ఆరోగ్య విశ్వశక్తిని మీ సొంతం చేసుకోండి!
+            </p>
+        </div>
+
+        <div id="hero-english" class="space-y-4 max-w-4xl mx-auto hidden z-10">
+            <blockquote class="text-xl md:text-2xl font-semibold text-amber-100 italic glow-gold py-2">
+                "Health is Wealth... Meditation is the Supreme Medicine!"
+            </blockquote>
+            <p class="text-slate-200 text-base md:text-lg max-w-2xl mx-auto leading-relaxed text-glow-white">
+                Step into Nellore's physical cosmic energy sanctuary... Claim complete health and mental peace!
+            </p>
+        </div>
+
+        <div class="mt-10 flex flex-wrap gap-4 justify-center items-center z-10">
+            <a href="#live-broadcast" class="bg-gradient-to-r from-red-600 to-rose-700 hover:from-red-700 hover:to-rose-800 text-white font-bold px-8 py-3.5 rounded-full shadow-lg transition-all flex items-center gap-2 transform hover:scale-105">
+                <i class="fa-solid fa-circle-play animate-pulse text-lg"></i>
+                <span class="lang-text" data-te="ప్రత్యక్ష ప్రసారం (Live)" data-en="Live Relay Broadcast">ప్రత్యక్ష ప్రసారం (Live)</span>
+            </a>
+            <a href="#satsang-section" class="bg-gradient-to-r from-teal-500 to-emerald-600 hover:from-teal-600 hover:to-emerald-700 text-white font-bold px-8 py-3.5 rounded-full shadow-lg transition-all flex items-center gap-2 transform hover:scale-105">
+                <i class="fa-solid fa-calendar-star"></i>
+                <span class="lang-text" data-te="సత్సంగం & క్లాసులు" data-en="Satsang & Classes">సత్సంగం & క్లాసులు</span>
+            </a>
+            <a href="#annadanam-requirements" class="bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white font-bold px-8 py-3.5 rounded-full shadow-lg transition-all flex items-center gap-2 transform hover:scale-105">
+                <i class="fa-solid fa-bowl-food animate-bounce"></i>
+                <span class="lang-text" data-te="అన్నదాతలు & అవసరాలు" data-en="Donors & Needs">అన్నదాతలు & అవసరాలు</span>
+            </a>
+            <a href="#donations-section" class="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-cosmic-950 font-bold px-8 py-3.5 rounded-full shadow-lg transition-all flex items-center gap-2 transform hover:scale-105">
+                <i class="fa-solid fa-hand-holding-heart"></i>
+                <span class="lang-text" data-te="విరాళాలు పంపండి" data-en="Donations & Seva">విరాళాలు పంపండి</span>
             </a>
         </div>
+    </header>
 
-        <div class="section timer-container">
-            <h2 class="section-title">🧘 స్వీయ ధ్యాన టైమర్</h2>
-            <div class="timer-display" id="display">00:00</div>
-            <div class="btn-group">
-                <button onclick="setTimer(3)">3 నిమిషాలు</button>
-                <button onclick="setTimer(5)">5 నిమిషాలు</button>
-                <button onclick="setTimer(10)">10 నిమిషాలు</button>
-                <button class="stop-btn" onclick="stopTimer()">ఆపు (Stop)</button>
+    <section id="live-broadcast" class="py-16 px-4 max-w-6xl mx-auto scroll-mt-20">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="bg-glass rounded-3xl p-6 md:p-8 border border-red-500/30 shadow-2xl relative overflow-hidden flex flex-col justify-between">
+                <div class="absolute -top-12 -left-12 w-32 h-32 bg-red-500/10 rounded-full blur-3xl"></div>
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="bg-red-500/20 text-red-400 border border-red-500/30 text-xs font-bold uppercase tracking-wider px-3.5 py-1 rounded-full flex items-center gap-1.5 animate-pulse">
+                            <span class="w-2 h-2 rounded-full bg-red-500"></span>
+                            <span class="lang-text" data-te="ప్రత్యక్ష ప్రసారం" data-en="Live Relay Stream">ప్రత్యక్ష ప్రసారం</span>
+                        </span>
+                    </div>
+
+                    <div class="space-y-2">
+                        <span class="text-xs text-slate-400 uppercase tracking-widest block lang-text" data-te="ప్రసార శీర్షిక / వివరణ" data-en="Broadcast Subject / Platform">ప్రసార శీర్షిక / వివరణ</span>
+                        <input type="text" id="live-subject-txt" onchange="autoSaveField('live_subject_text', this.value)" class="text-xl md:text-2xl font-extrabold text-white leading-tight editable-input" value="యూట్యూబ్ లైవ్ ద్వారా ప్రత్యక్ష ప్రసారం" placeholder="శీర్షిక రాయండి...">
+                    </div>
+
+                    <div class="space-y-2">
+                        <span class="text-xs text-slate-400 uppercase tracking-widest block lang-text" data-te="లైవ్ బ్రాడ్‌కాస్ట్ లింక్ (URL)" data-en="Live Broadcast Link (URL)">లైవ్ బ్రాడ్‌కాస్ట్ లింక్ (URL)</span>
+                        <input type="url" id="live-url-txt" onchange="autoSaveField('live_url_text', this.value); updateLiveButton(this.value);" class="text-xs text-slate-300 editable-input font-mono" value="https://www.youtube.com/@SriDhanvantariPyramid" placeholder="https://youtube.com/live/your-link">
+                    </div>
+                </div>
+
+                <div class="pt-6 mt-6 border-t border-white/10">
+                    <a id="live-action-btn" href="https://www.youtube.com/@SriDhanvantariPyramid" target="_blank" class="w-full bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-700 hover:to-rose-700 text-white font-bold py-3 px-6 rounded-xl flex items-center justify-center gap-2 shadow-lg transform active:scale-95 transition-all">
+                        <i class="fa-solid fa-circle-play text-lg"></i>
+                        <span class="lang-text" data-te="...ప్రసారంలో చేరండి" data-en="Join Live Stream Now">ప్రత్యక్ష ప్రసారంలో చేరండి</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="bg-glass rounded-3xl p-6 md:p-8 border border-gold-500/20 shadow-2xl relative overflow-hidden flex flex-col justify-between">
+                <div class="absolute -top-12 -right-12 w-32 h-32 bg-teal-500/10 rounded-full blur-3xl"></div>
+                <div class="space-y-4">
+                    <h3 class="text-lg md:text-xl font-bold text-gold-400 font-serif flex items-center gap-2">
+                        <i class="fa-solid fa-users-rays text-teal-400"></i>
+                        <span class="lang-text" data-te="సామాజిక అనుసంధానం" data-en="Divine Social Community">సామాజిక అనుసంధానం</span>
+                    </h3>
+                    <p class="text-xs text-slate-400 lang-text" data-te="గ్రూప్ లింకులను నేరుగా ఎడిట్ చేసి క్రింది బటన్ల ద్వారా సేవ్ చేయండి" data-en="Update group invitation links directly in fields below">గ్రూప్ లింకులను నేరుగా ఎడిట్ చేసి క్రింది బటన్ల ద్వారా సేవ్ చేయండి</p>
+                    
+                    <div class="space-y-3 text-xs">
+                        <div class="flex items-center gap-2 bg-slate-950/40 p-2.5 rounded-xl border border-white/5">
+                            <i class="fa-brands fa-whatsapp text-emerald-400 text-xl w-6 text-center"></i>
+                            <input type="url" id="social-link-wa" onchange="autoSaveField('social_wa_url', this.value); updateSocialBtn('wa-btn', this.value)" class="bg-transparent outline-none flex-1 text-slate-200" value="https://chat.whatsapp.com/example" placeholder="WhatsApp Group Link">
+                        </div>
+                        <div class="flex items-center gap-2 bg-slate-950/40 p-2.5 rounded-xl border border-white/5">
+                            <i class="fa-brands fa-telegram text-sky-400 text-xl w-6 text-center"></i>
+                            <input type="url" id="social-link-tg" onchange="autoSaveField('social_tg_url', this.value); updateSocialBtn('tg-btn', this.value)" class="bg-transparent outline-none flex-1 text-slate-200" value="https://t.me/example" placeholder="Telegram Channel Link">
+                        </div>
+                        <div class="flex items-center gap-2 bg-slate-950/40 p-2.5 rounded-xl border border-white/5">
+                            <i class="fa-brands fa-youtube text-red-500 text-xl w-6 text-center"></i>
+                            <input type="url" id="social-link-yt" onchange="autoSaveField('social_yt_url', this.value); updateSocialBtn('yt-btn', this.value)" class="bg-transparent outline-none flex-1 text-slate-200" value="https://youtube.com/@example" placeholder="YouTube Channel Link">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-3 gap-2 pt-4 mt-4 border-t border-white/10">
+                    <a id="wa-btn" href="https://chat.whatsapp.com/example" target="_blank" class="bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/30 text-center py-2.5 rounded-xl text-xs font-bold transition-all flex flex-col items-center gap-1">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                    <a id="tg-btn" href="https://t.me/example" target="_blank" class="bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/30 text-center py-2.5 rounded-xl text-xs font-bold transition-all flex flex-col items-center gap-1">
+                        <i class="fa-brands fa-telegram text-lg"></i>
+                        <span>Telegram</span>
+                    </a>
+                    <a id="yt-btn" href="https://youtube.com/@example" target="_blank" class="bg-red-500/20 hover:bg-red-500/30 text-red-300 border border-red-500/30 text-center py-2.5 rounded-xl text-xs font-bold transition-all flex flex-col items-center gap-1">
+                        <i class="fa-brands fa-youtube text-lg"></i>
+                        <span>YouTube</span>
+                    </a>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div class="section bank-details">
-            <h2 class="section-title">🙏 విరాళాలు & సేవా కార్యక్రమాలు</h2>
-            <p class="editable-text" contenteditable="true">మన ట్రస్ట్ ద్వారా జరుగుతున్న పిరమిడ్ నిర్మాణం మరియు అన్నదాన سేవలకు మీ వంతు సహాయం అందించవచ్చు. మన ట్రస్ట్‌కు 12A మరియు 80G ఆదాయపు పన్ను మినహాయింపు సర్టిఫికేట్లు కలవు.</p>
+    <section id="satsang-section" class="py-16 px-4 max-w-6xl mx-auto scroll-mt-20">
+        <div class="text-center space-y-2 mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gold-400 font-serif lang-text" data-te="రాబోయే ఆధ్యాత్మిక సత్సంగం & వర్క్‌షాప్" data-en="Upcoming Spiritual Satsang & Workshop">
+                రాబోయే ఆధ్యాత్మిక సత్సంగం & వర్క్‌షాప్
+            </h2>
+        </div>
+
+        <div class="bg-glass rounded-3xl p-6 md:p-10 border border-gold-500/30 shadow-2xl relative overflow-hidden">
+            <div class="absolute -right-16 -bottom-16 w-48 h-48 bg-teal-500/10 rounded-full blur-3xl"></div>
             
-            <div class="bank-box">
-                <p><strong>ట్రస్ట్ పేరు:</strong> Dhanvantari Pyramid Trust</p>
-                <p><strong>బ్యాంక్ పేరు:</strong> State Bank of India (SBI)</p>
-                <p><strong>ఖాతา సంఖ్య:</strong> 00000000000000 (సరిచేసుకోండి)</p>
-                <p><strong>IFSC కోడ్:</strong> SBIN0000000</p>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-5 flex flex-col items-center text-center space-y-4">
+                    <div class="relative group">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-gold-500 to-teal-500 rounded-2xl blur-lg opacity-30 group-hover:opacity-50 transition-all"></div>
+                        <div class="w-48 h-48 md:w-56 md:h-56 rounded-2xl overflow-hidden border-2 border-gold-400/50 relative z-10 bg-cosmic-900 shadow-xl">
+                            <img id="satsang-teacher-img" src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover" alt="Satsang Master">
+                            <button onclick="document.getElementById('satsang-master-file').click()" class="absolute inset-0 bg-cosmic-950/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-gold-400 p-2 text-center">
+                                <i class="fa-solid fa-camera-rotate text-2xl mb-1"></i>
+                                <span class="text-[10px] font-semibold lang-text" data-te="మాస్టర్ ఫోటో మార్చండి" data-en="Change Master Photo">మాస్టర్ ఫోటో మార్చండి</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-2 w-full px-4">
+                        <input type="text" id="display-satsang-master" onchange="autoSaveField('satsang_master', this.value)" class="text-xl md:text-2xl font-bold text-amber-200 font-serif text-center editable-input" value="బ్రహ్మర్షి పత్రీజీ శిష్యులు" placeholder="గురువు గారి పేరు">
+                        <input type="text" id="display-satsang-role" onchange="autoSaveField('satsang_role', this.value)" class="text-xs text-teal-400 font-semibold tracking-widest uppercase text-center editable-input" value="ఆధ్యాత్మిక ధ్యాన గురువు" placeholder="గురువు గారి హోదా">
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="flex flex-wrap gap-3">
+                        <div class="bg-amber-500/15 border border-amber-500/30 rounded-xl px-4 py-2 flex items-center gap-2 w-full sm:w-auto">
+                            <i class="fa-regular fa-calendar-days text-gold-400 flex-shrink-0"></i>
+                            <input type="text" id="display-satsang-date" onchange="autoSaveField('satsang_date', this.value)" class="text-xs md:text-sm font-bold text-amber-100 bg-transparent outline-none border-b border-dashed border-amber-500/20 focus:border-amber-400 w-full" value="వారపు రోజులలో (Weekdays / Sundays)">
+                        </div>
+                        <div class="bg-teal-500/15 border border-teal-500/30 rounded-xl px-4 py-2 flex items-center gap-2 w-full sm:w-auto">
+                            <i class="fa-regular fa-clock text-teal-300 flex-shrink-0"></i>
+                            <input type="text" id="display-satsang-time" onchange="autoSaveField('satsang_time', this.value)" class="text-xs md:text-sm font-bold text-teal-100 bg-transparent outline-none border-b border-dashed border-teal-500/20 focus:border-teal-300 w-full" value="ఉదయం 10:00 AM to 5:00 PM">
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <span class="text-xs text-slate-400 uppercase tracking-widest block lang-text" data-te="సత్సంగ విషయం" data-en="Satsang Subject">సత్సంగ విషయం</span>
+                        <input type="text" id="display-satsang-subject" onchange="autoSaveField('satsang_subject', this.value)" class="text-xl sm:text-2xl md:text-3xl font-extrabold text-white leading-tight font-telugu editable-input" value="మహా శూన్య ధ్యానం మరియు సజ్జన సాంగత్యం" placeholder="సత్సంగ విషయం శీర్షిక">
+                    </div>
+
+                    <div class="space-y-2">
+                        <span class="text-xs text-slate-400 uppercase tracking-widest block lang-text" data-te="కార్యక్రమ పూర్తి వివరాలు" data-en="Event Details Description">కార్యక్రమ పూర్తి వివరాలు</span>
+                        <textarea id="display-satsang-desc" onchange="autoSaveField('satsang_desc', this.value)" rows="4" class="w-full bg-slate-950/40 border border-dashed border-gold-500/20 rounded-xl px-4 py-3 focus:outline-none focus:border-gold-500 text-slate-200 text-sm md:text-base leading-relaxed transition-all" placeholder="ధ్యాన సత్సంగం మరియు కార్యక్రమం యొక్క పూర్తి వివరాలు ఇక్కడ రాయండి...">ఈ అద్భుత క్లాసులో మనం పిరమిడ్ దైవిక తరంగాల సమక్షంలో మనస్సును ఎలా శూన్యం చేయాలో మరియు आध्यात्मिक సాధనలో ఎదురయ్యే ప్రశ్నలకు సమాధానాలు ఎలా పొందాలో ప్రత్యక్ష ధ్యాన సాధన ద్వారా తెలుసుకోబోతున్నాము. ప్రతి ఒక్కరూ ఆహ్వానితులే!</textarea>
+                    </div>
+
+                    <div class="pt-4 border-t border-white/10 flex justify-between items-center">
+                        <div class="flex items-center gap-2">
+                            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+                            <span class="text-xs text-slate-400 lang-text" data-te="మార్పులు ఆటోమేటిక్‌గా సేవ్ అవుతాయి" data-en="Changes saved automatically in browser">మార్పులు ఆటోమేటిక్‌గా సేవ్ అవుతాయి</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="footer">
-        <p>© 2026 శ్రీ ధнвантари మహా పిరమిడ్ ధ్యాన కేంద్రం. సర్వే జనాః సుఖినోభవంతు.</p>
-    </div>
-</div>
+    <section id="annadanam-requirements" class="py-16 px-4 max-w-6xl mx-auto scroll-mt-20">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="bg-glass rounded-3xl p-6 md:p-8 border border-amber-500/20 shadow-2xl relative overflow-hidden flex flex-col justify-between">
+                <div class="absolute -top-12 -left-12 w-32 h-32 bg-amber-500/10 rounded-full blur-3xl"></div>
+                <div class="space-y-6">
+                    <h3 class="text-xl font-bold text-gold-400 font-serif flex items-center gap-2">
+                        <i class="fa-solid fa-bowl-food text-amber-400"></i>
+                        <span class="lang-text" data-te="పిరమిడ్ నిత్య అన్నదాతలు" data-en="Pyramid Daily Food Donors">పిరమిడ్ నిత్య అన్నదాతలు</span>
+                    </h3>
+                    
+                    <div class="space-y-4 bg-slate-950/40 p-5 rounded-2xl border border-white/5">
+                        <div class="space-y-1">
+                            <span class="text-[10px] text-slate-400 uppercase tracking-wider block lang-text" data-te="అన్నదాత పేరు" data-en="Donor Name">అన్నదాత పేరు</span>
+                            <input type="text" id="donor-name-txt" onchange="autoSaveField('donor_name', this.value)" class="text-lg font-bold text-amber-200 editable-input" value="శ్రీమతి & శ్రీ రామరాజు గారు" placeholder="దాతల పేరు రాయండి">
+                        </div>
+                        <div class="space-y-1">
+                            <span class="text-[10px] text-slate-400 uppercase tracking-wider block lang-text" data-te="శుభ సందర్భం / ఉద్దేశం" data-en="Occasion / Intent">శుభ సందర్భం / ఉద్దేశం</span>
+                            <input type="text" id="donor-occasion-txt" onchange="autoSaveField('donor_occasion', this.value)" class="text-sm font-semibold text-slate-200 editable-input" value="వారి కుమారుని జన్మదినోత్సవం సందర్భంగా" placeholder="సন্দర్భం రాయండి">
+                        </div>
+                        <div class="space-y-1">
+                            <span class="text-[10px] text-slate-400 uppercase tracking-wider block lang-text" data-te="అన్నదాన తేదీ" data-en="Donation Date">అన్నదాన తేదీ</span>
+                            <input type="text" id="donor-date-txt" onchange="autoSaveField('donor_date', this.value)" class="text-xs font-bold text-teal-400 editable-input font-mono" value="ఈరోజు సాయంత్రం (Today Evening)" placeholder="తేదీ లేదా సమయం">
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-4 mt-6 border-t border-white/10 flex items-center justify-between text-xs text-slate-400 italic">
+                    <span class="lang-text" data-te="* అన్నదాతా సుఖీభవ *" data-en="* May the Giver be Blessed *">* అన్నదాతా సుఖీభవ *</span>
+                    <i class="fa-solid fa-heart text-red-500 animate-pulse"></i>
+                </div>
+            </div>
 
-<script>
-    let countdown;
-    let audioCtx;
-    let oscillator;
+            <div class="bg-glass rounded-3xl p-6 md:p-8 border border-purple-500/20 shadow-2xl relative overflow-hidden flex flex-col justify-between">
+                <div class="absolute -top-12 -right-12 w-32 h-32 bg-purple-500/10 rounded-full blur-3xl"></div>
+                <div class="space-y-6">
+                    <h3 class="text-xl font-bold text-gold-400 font-serif flex items-center gap-2">
+                        <i class="fa-solid fa-clipboard-list text-purple-400"></i>
+                        <span class="lang-text" data-te="పిరమిడ్ ప్రస్తుత అవసరాలు" data-en="Pyramid Current Requirements">పిరమిడ్ ప్రస్తుత అవసరాలు</span>
+                    </h3>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between gap-4 bg-slate-950/40 p-3 rounded-xl border border-white/5">
+                            <div class="flex-1">
+                                <input type="text" id="req-item1-txt" onchange="autoSaveField('req_item1', this.value)" class="text-sm font-semibold text-slate-200 bg-transparent outline-none border-b border-dashed border-white/10 focus:border-gold-500 w-full" value="ధ్యానం కొరకు ఉన్ని మ్యాట్లు (wool mats) - 50">
+                            </div>
+                            <span class="bg-red-500/20 text-red-400 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider whitespace-nowrap lang-text" data-te="అत्यవసరం" data-en="Urgent">అత్యవసరం</span>
+                        </div>
 
-    function playMeditationSound() {
-        try {
-            audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-            oscillator = audioCtx.createOscillator();
-            let gainNode = audioCtx.createGain();
-            oscillator.type = 'sine';
-            oscillator.frequency.setValueAtTime(136.1, audioCtx.currentTime); 
-            gainNode.gain.setValueAtTime(0.06, audioCtx.currentTime);
-            oscillator.connect(gainNode);
-            gainNode.connect(audioCtx.destination);
-            oscillator.start();
-        } catch(e) {}
-    }
+                        <div class="flex items-center justify-between gap-4 bg-slate-950/40 p-3 rounded-xl border border-white/5">
+                            <div class="flex-1">
+                                <input type="text" id="req-item2-txt" onchange="autoSaveField('req_item2', this.value)" class="text-sm font-semibold text-slate-200 bg-transparent outline-none border-b border-dashed border-white/10 focus:border-gold-500 w-full" value="ధ్యాన గ్రంథాలయం కొరకు ఆధ్యాత్మిక పుస్తకాలు">
+                            </div>
+                            <span class="bg-amber-500/20 text-amber-300 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider whitespace-nowrap lang-text" data-te="కావాలి" data-en="Required">కావాలి</span>
+                        </div>
 
-    function playBellSound() {
-        if(audioCtx) {
-            try {
-                let bellOsc = audioCtx.createOscillator();
-                let bellGain = audioCtx.createGain();
-                bellOsc.frequency.setValueAtTime(440, audioCtx.currentTime);
-                bellGain.gain.setValueAtTime(0.2, audioCtx.currentTime);
-                bellGain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 2);
-                bellOsc.connect(bellGain);
-                bellGain.connect(audioCtx.destination);
-                bellOsc.start();
-                bellOsc.stop(audioCtx.currentTime + 2);
-            } catch(e){}
-        }
-    }
+                        <div class="flex items-center justify-between gap-4 bg-slate-950/40 p-3 rounded-xl border border-white/5">
+                            <div class="flex-1">
+                                <input type="text" id="req-item3-txt" onchange="autoSaveField('req_item3', this.value)" class="text-sm font-semibold text-slate-200 bg-transparent outline-none border-b border-dashed border-white/10 focus:border-gold-500 w-full" value="అన్నదాన సేవల కొరకు బియ్యం మరియు పప్పులు">
+                            </div>
+                            <span class="bg-teal-500/20 text-teal-300 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider whitespace-nowrap lang-text" data-te="సాధారణం" data-en="General">సాధారణం</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-4 mt-6 border-t border-white/10 text-xs text-slate-400 leading-relaxed lang-text" data-te="సహాయం చేయాలనుకునే వారు క్రింది బ్యాంక్ వివరాలు చూడగలరు." data-en="Those who wish to contribute can use bank details below.">
+                    సహాయం చేయాలనుకునే వారు క్రింది బ్యాంక్ వివరాలు చూడగలరు.
+                </div>
+            </div>
+        </div>
+    </section>
 
-    function setTimer(minutes) {
-        clearInterval(countdown);
-        if(oscillator) { try{oscillator.stop();}catch(e){} }
-        playMeditationSound();
-        let seconds = minutes * 60;
-        displayTime(seconds);
+    <section class="py-12 px-4 max-w-3xl mx-auto">
+        <div class="bg-glass rounded-3xl p-6 md:p-8 border border-gold-500/20 shadow-2xl text-center space-y-6 relative overflow-hidden">
+            <h3 class="text-lg md:text-xl font-bold text-gold-400 font-serif flex items-center justify-center gap-2">
+                <i class="fa-solid fa-clock text-amber-400"></i>
+                <span class="lang-text" data-te="స్వీయ ధ్యాన టైమర్" data-en="Self Meditation Timer">స్వీయ ధ్యాన టైమర్</span>
+            </h3>
+            
+            <div class="relative w-40 h-40 mx-auto flex items-center justify-center">
+                <svg class="w-full h-full transform -rotate-90">
+                    <circle cx="80" cy="80" r="70" stroke="rgba(255,255,255,0.05)" stroke-width="6" fill="transparent"/>
+                    <circle id="timer-progress" cx="80" cy="80" r="70" stroke="#f59e0b" stroke-width="6" fill="transparent" stroke-dasharray="440" stroke-dashoffset="0" class="transition-all duration-1000"/>
+                </svg>
+                <div id="timer-display" class="absolute text-3xl font-bold font-mono text-white">20:00</div>
+            </div>
 
-        countdown = setInterval(() => {
-            seconds--;
-            displayTime(seconds);
-            if (seconds <= 0) {
-                clearInterval(countdown);
-                if(oscillator) { try{oscillator.stop();}catch(e){} }
-                playBellSound();
-                alert("ధ్యాన సమయం పూర్తయింది 🙏");
+            <div class="flex justify-center gap-3">
+                <button onclick="setTimerPreset(10)" class="bg-slate-950/60 hover:bg-slate-900 border border-white/10 px-4 py-2 rounded-xl text-xs font-bold transition-all">10 Min</button>
+                <button onclick="setTimerPreset(20)" class="bg-slate-950/60 hover:bg-slate-900 border border-white/10 px-4 py-2 rounded-xl text-xs font-bold transition-all">20 Min</button>
+                <button onclick="setTimerPreset(30)" class="bg-slate-950/60 hover:bg-slate-900 border border-white/10 px-4 py-2 rounded-xl text-xs font-bold transition-all">30 Min</button>
+            </div>
+
+            <div class="flex justify-center gap-4 pt-2">
+                <button id="play-btn" onclick="toggleTimer()" class="bg-gold-500 hover:bg-gold-600 text-cosmic-950 font-extrabold w-12 h-12 rounded-full flex items-center justify-center shadow-lg transform active:scale-95 transition-all text-lg">
+                    <i class="fa-solid fa-play ml-1"></i>
+                </button>
+                <button onclick="resetTimer()" class="bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold w-12 h-12 rounded-full flex items-center justify-center shadow-lg transform active:scale-95 transition-all">
+                    <i class="fa-solid fa-rotate-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="donations-section" class="py-16 px-4 max-w-4xl mx-auto scroll-mt-20">
+        <div class="bg-glass rounded-3xl p-6 md:p-10 border border-gold-500/30 shadow-2xl relative overflow-hidden">
+            <div class="absolute -left-12 -bottom-12 w-32 h-32 bg-amber-500/10 rounded-full blur-3xl"></div>
+            
+            <div class="text-center max-w-2xl mx-auto space-y-3 mb-8">
+                <h2 class="text-2xl md:text-3xl font-bold text-gold-400 font-serif lang-text" data-te="🙏 విరాళాలు & సేవా కార్యక్రమాలు" data-en="🙏 Seva Contributions & Donations">
+                    🙏 విరాళాలు & సేవా కార్యక్రమాలు
+                </h2>
+                <p class="text-sm text-slate-300 leading-relaxed lang-text" data-te="మన ట్రస్ట్ ద్వారా జరుగుతున్న పిరమిడ్ నిర్వహణ మరియు నిత్య అన్నదాన సేవలకు మీ వంతు దైవిక సహాయాన్ని క్రింది వివరాల ద్వారా అందించవచ్చు." data-en="Support our permanent cosmic pyramid maintenance and daily holy food serving works through direct account transfers.">
+                    మన ట్రస్ట్ ద్వారా జరుగుతున్న పిరమిడ్ నిర్వహణ మరియు నిత్య అన్నదాన సేవలకు మీ వంతు దైవిక సహాయాన్ని క్రింది వివరాల ద్వారా అందించవచ్చు.
+                </p>
+                <div class="inline-block bg-teal-500/20 text-teal-300 border border-teal-500/30 text-xs font-bold px-4 py-1.5 rounded-full mt-2 lang-text" data-te="📜 ఆదాయపు పన్ను మినహాయింపు (80G & 12A) కలదు" data-en="📜 80G & 12A Income Tax Exemptions Approved">
+                    📜 ఆదాయపు పన్ను మినహాయింపు (80G & 12A) కలదు
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center pt-4 border-t border-white/10">
+                <div class="md:col-span-7 space-y-4 text-sm bg-slate-950/40 p-5 rounded-2xl border border-white/5">
+                    <div class="grid grid-cols-3 gap-2 py-1.5 border-b border-white/5">
+                        <span class="text-slate-400 font-semibold lang-text" data-te="ట్రస్ట్ పేరు:" data-en="Trust Name:">ట్రస్ట్ పేరు:</span>
+                        <span class="text-slate-100 font-bold col-span-2">Dhanvantari Pyramid Trust</span>
+                    </div>
+                    <div class="grid grid-cols-3 gap-2 py-1.5 border-b border-white/5">
+                        <span class="text-slate-400 font-semibold lang-text" data-te="బ్యాంక్ పేరు:" data-en="Bank Name:">బ్యాంక్ పేరు:</span>
+                        <span class="text-slate-100 font-bold col-span-2">State Bank of India (SBI)</span>
+                    </div>
+                    <div class="grid grid-cols-3 gap-2 py-1.5 border-b border-white/5">
+                        <span class="text-slate-400 font-semibold lang-text" data-te="ఖాతా సంఖ్య:" data-en="Account No:">ఖాతా సంఖ్య:</span>
+                        <div class="col-span-2">
+                            <input type="text" id="bank-acc-txt" onchange="autoSaveField('bank_account', this.value)" class="font-bold text-amber-200 font-mono editable-input" value="44280549921" placeholder="ఖాతా సంఖ్య">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-2 py-1.5">
+                        <span class="text-slate-400 font-semibold lang-text" data-te="IFSC కోడ్:" data-en="IFSC Code:">IFSC కోడ్:</span>
+                        <div class="col-span-2">
+                            <input type="text" id="bank-ifsc-txt" onchange="autoSaveField('bank_ifsc', this.value)" class="font-bold text-amber-200 font-mono editable-input uppercase" value="SBIN0001871" placeholder="IFSC కోడ్">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:col-span-5 flex flex-col items-center justify-center text-center space-y-3">
+                    <div class="relative group bg-white p-3 rounded-2xl shadow-xl w-40 h-40 flex items-center justify-center border-2 border-gold-400">
+                        <img id="qr-code-img" src="QR.jpg" class="w-full h-full object-contain" alt="Donation QR Code">
+                        <div id="qr-placeholder" class="text-cosmic-950 flex flex-col items-center justify-center hidden">
+                            <i class="fa-solid fa-qrcode text-5xl text-slate-300"></i>
+                        </div>
+                        <button onclick="document.getElementById('qr-image-file').click()" class="absolute inset-0 bg-cosmic-950/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-gold-400 p-2 text-center rounded-2xl">
+                            <i class="fa-solid fa-camera-rotate text-2xl mb-1"></i>
+                            <span class="text-[10px] font-bold lang-text" data-te="QR కోడ్ మార్చండి" data-en="Change QR Code">QR కోడ్ మార్చండి</span>
+                        </button>
+                    </div>
+                    <p class="text-xs font-bold text-amber-200/80 tracking-wide font-sans lang-text" data-te="Scan & Pay via PhonePe / GPay" data-en="Scan & Pay via PhonePe / GPay">
+                        Scan & Pay via PhonePe / GPay
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 text-center text-xs text-slate-500 border-t border-white/5 bg-slate-950/40 backdrop-blur-md">
+        <p class="lang-text" data-te="© 2026 శ్రీ ధన్వంతరి మహా పిరమిడ్ ధ్యాన కేంద్రం, నెల్లూరు. సర్వే జనాః సుਖినోభవంతు." data-en="© 2026 Sri Dhanvantari Maha Pyramid Center, Nellore. Universal Peace to All.">
+            © 2026 శ్రీ ధన్వంతరి మహా పిరమిడ్ ధ్యాన కేంద్రం, నెల్లూరు. సర్వే జనాః సుਖినోభవంతు.
+        </p>
+    </footer>
+
+    <audio id="ambient-audio" loop src="https://assets.mixkit.co/active_storage/sfx/2568/2568-84.wav"></audio>
+    <audio id="bell-audio" src="https://assets.mixkit.co/active_storage/sfx/1993/1993-84.wav"></audio>
+
+    <script>
+        let currentLang = 'te'; 
+        let timerInstance = null;
+        let totalSeconds = 1200; 
+        let remainingSeconds = 1200;
+        let isTimerRunning = false;
+
+        let timerDisplay, timerProgress, playBtn, ambientAudio, bellAudio;
+        let bgImgDisplay, resetBtn;
+        let leftMasterImg, rightMasterImg, satsangTeacherImg, logoImg, logoPlaceholderSvg, qrCodeImg, qrPlaceholder;
+
+        function toggleLanguage() {
+            currentLang = (currentLang === 'te') ? 'en' : 'te';
+            document.getElementById('lang-btn-text').innerText = (currentLang === 'te') ? 'English' : 'తెలుగు';
+            
+            const teTitles = ['title-telugu', 'trust-sub-telugu', 'hero-telugu', 'addr-telugu'];
+            const enTitles = ['title-english', 'trust-sub-english', 'hero-english', 'addr-english'];
+
+            if (currentLang === 'te') {
+                teTitles.forEach(id => document.getElementById(id)?.classList.remove('hidden'));
+                enTitles.forEach(id => document.getElementById(id)?.classList.add('hidden'));
+            } else {
+                teTitles.forEach(id => document.getElementById(id)?.classList.add('hidden'));
+                enTitles.forEach(id => document.getElementById(id)?.classList.remove('hidden'));
             }
-        }, 1000);
-    }
 
-    function stopTimer() {
-        clearInterval(countdown);
-        if(oscillator) { try{oscillator.stop();}catch(e){} }
-        document.getElementById('display').innerText = "00:00";
-    }
+            document.querySelectorAll('.lang-text').forEach(el => {
+                const teText = el.getAttribute('data-te');
+                const enText = el.getAttribute('data-en');
+                if (currentLang === 'te' && teText) el.innerText = teText;
+                if (currentLang === 'en' && enText) el.innerText = enText;
+            });
+        }
 
-    function displayTime(seconds) {
-        const mins = Math.floor(seconds / 60);
-        const remainderSecs = seconds % 60;
-        document.getElementById('display').innerText = `${mins < 10 ? '0' : ''}${mins}:${remainderSecs < 10 ? '0' : ''}${remainderSecs}`;
-    }
-</script>
+        function handleImageUpload(event, type) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const dataUrl = e.target.result;
+                if (type === 'bg') {
+                    bgImgDisplay.src = dataUrl;
+                    localStorage.setItem('pyramid_bg_custom', dataUrl);
+                    resetBtn.classList.remove('hidden');
+                } else if (type === 'left') {
+                    leftMasterImg.src = dataUrl;
+                    localStorage.setItem('pyramid_left_master', dataUrl);
+                } else if (type === 'right') {
+                    rightMasterImg.src = dataUrl;
+                    localStorage.setItem('pyramid_right_master', dataUrl);
+                } else if (type === 'satsang') {
+                    satsangTeacherImg.src = dataUrl;
+                    localStorage.setItem('pyramid_satsang_teacher', dataUrl);
+                } else if (type === 'logo') {
+                    logoImg.src = dataUrl;
+                    logoImg.classList.remove('hidden');
+                    logoPlaceholderSvg.classList.add('hidden');
+                    localStorage.setItem('pyramid_logo_img', dataUrl);
+                } else if (type === 'qr') {
+                    qrCodeImg.src = dataUrl;
+                    qrCodeImg.classList.remove('hidden');
+                    qrPlaceholder.classList.add('hidden');
+                    localStorage.setItem('pyramid_qr_img', dataUrl);
+                }
+            };
+            reader.readAsDataURL(file);
+        }
 
+        function resetTempleImage() {
+            localStorage.removeItem('pyramid_bg_custom');
+            bgImgDisplay.src = 'pyramid1.jpeg';
+            resetBtn.classList.add('hidden');
+        }
+
+        function checkSavedImages() {
+            const savedBg = localStorage.getItem('pyramid_bg_custom');
+            if (savedBg) {
+                bgImgDisplay.src = savedBg;
+                resetBtn.classList.remove('hidden');
+            }
+            const savedLeft = localStorage.getItem('pyramid_left_master');
+            if (savedLeft) leftMasterImg.src = savedLeft;
+            
+            const savedRight = localStorage.getItem('pyramid_right_master');
+            if (savedRight) rightMasterImg.src = savedRight;
+
+            const savedSatsang = localStorage.getItem('pyramid_satsang_teacher');
+            if (savedSatsang) satsangTeacherImg.src = savedSatsang;
+
+            const savedLogo = localStorage.getItem('pyramid_logo_img');
+            if (savedLogo) {
+                logoImg.src = savedLogo;
+                logoImg.classList.remove('hidden');
+                logoPlaceholderSvg.classList.add('hidden');
+            }
+            const savedQr = localStorage.getItem('pyramid_qr_img');
+            if (savedQr) {
+                qrCodeImg.src = savedQr;
+                qrCodeImg.classList.remove('hidden');
+                qrPlaceholder.classList.add('hidden');
+            }
+            loadSavedTextFields();
+        }
+
+        function setTimerPreset(minutes) {
+            stopTimerInternal();
+            totalSeconds = minutes * 60;
+            remainingSeconds = totalSeconds;
+            updateTimerUI();
+        }
+
+        function toggleTimer() {
+            if (isTimerRunning) {
+                stopTimerInternal();
+            } else {
+                startTimerInternal();
+            }
+        }
+
+        function startTimerInternal() {
+            isTimerRunning = true;
+            playBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
+            ambientAudio.play().catch(() => {});
+            
+            timerInstance = setInterval(() => {
+                remainingSeconds--;
+                updateTimerUI();
+
+                if (remainingSeconds <= 0) {
+                    stopTimerInternal();
+                    bellAudio.play().catch(() => {});
+                    alert(currentLang === 'te' ? "ధ్యాన సమయం పూర్తయింది. శూన్యం నుండి మేల్కొనండి 🙏" : "Meditation session completed. Awaken gently 🙏");
+                    remainingSeconds = totalSeconds;
+                    updateTimerUI();
+                }
+            }, 1000);
+        }
+
+        function stopTimerInternal() {
+            isTimerRunning = false;
+            clearInterval(timerInstance);
+            playBtn.innerHTML = '<i class="fa-solid fa-play ml-1"></i>';
+            ambientAudio.pause();
+        }
+
+        function resetTimer() {
+            stopTimerInternal();
+            remainingSeconds = totalSeconds;
+            updateTimerUI();
+        }
+
+        function updateTimerUI() {
+            const mins = Math.floor(remainingSeconds / 60);
+            const secs = remainingSeconds % 60;
+            if (timerDisplay) {
+                timerDisplay.innerText = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+            }
+            if (timerProgress) {
+                const percent = remainingSeconds / totalSeconds;
+                const offset = 440 * (1 - percent);
+                timerProgress.style.strokeDashoffset = offset;
+            }
+        }
+
+        function updateLiveButton(url) {
+            const btn = document.getElementById('live-action-btn');
+            if (btn) btn.href = url || '#';
+        }
+
+        function updateSocialBtn(id, url) {
+            const btn = document.getElementById(id);
+            if (btn) btn.href = url || '#';
+        }
+
+        function autoSaveField(key, value) {
+            localStorage.setItem('pyramid_field_' + key, value);
+        }
+
+        function loadSavedTextFields() {
+            const fields = [
+                { id: 'live-subject-txt', key: 'live_subject_text' },
+                { id: 'live-url-txt', key: 'live_url_text', callback: updateLiveButton },
+                { id: 'social-link-wa', key: 'social_wa_url', callback: (v) => updateSocialBtn('wa-btn', v) },
+                { id: 'social-link-tg', key: 'social_tg_url', callback: (v) => updateSocialBtn('tg-btn', v) },
+                { id: 'social-link-yt', key: 'social_yt_url', callback: (v) => updateSocialBtn('yt-btn', v) },
+                { id: 'display-satsang-master', key: 'satsang_master' },
+                { id: 'display-satsang-role', key: 'satsang_role' },
+                { id: 'display-satsang-date', key: 'satsang_date' },
+                { id: 'display-satsang-time', key: 'satsang_time' },
+                { id: 'display-satsang-subject', key: 'satsang_subject' },
+                { id: 'display-satsang-desc', key: 'satsang_desc' },
+                { id: 'donor-name-txt', key: 'donor_name' },
+                { id: 'donor-occasion-txt', key: 'donor_occasion' },
+                { id: 'donor-date-txt', key: 'donor_date' },
+                { id: 'bank-acc-txt', key: 'bank_account' },
+                { id: 'bank-ifsc-txt', key: 'bank_ifsc' },
+                { id: 'req-item1-txt', key: 'req_item1' },
+                { id: 'req-item2-txt', key: 'req_item2' },
+                { id: 'req-item3-txt', key: 'req_item3' }
+            ];
+
+            fields.forEach(field => {
+                const savedValue = localStorage.getItem('pyramid_field_' + field.key);
+                const el = document.getElementById(field.id);
+                if (savedValue && el) {
+                    el.value = savedValue;
+                    if (field.callback) field.callback(savedValue);
+                }
+            });
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            timerDisplay = document.getElementById('timer-display');
+            timerProgress = document.getElementById('timer-progress');
+            playBtn = document.getElementById('play-btn');
+            ambientAudio = document.getElementById('ambient-audio');
+            bellAudio = document.getElementById('bell-audio');
+            
+            bgImgDisplay = document.getElementById('pyramid-bg-img');
+            resetBtn = document.getElementById('reset-img-btn');
+
+            leftMasterImg = document.getElementById('left-master-img');
+            rightMasterImg = document.getElementById('right-master-img');
+            satsangTeacherImg = document.getElementById('satsang-teacher-img');
+            logoImg = document.getElementById('logo-img');
+            logoPlaceholderSvg = document.getElementById('logo-placeholder-svg');
+            qrCodeImg = document.getElementById('qr-code-img');
+            qrPlaceholder = document.getElementById('qr-placeholder');
+
+            updateTimerUI();
+            checkSavedImages();
+        });
+    </script>
 </body>
 </html>
