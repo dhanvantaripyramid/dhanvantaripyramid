@@ -6,10 +6,11 @@
     <title>శ్రీ ధన్వంతరి మహా పిరమిడ్ ధ్యాన కేంద్రం</title>
     <style>
         :root {
-            --primary-color: #ff9933; /* కాషాయం */
-            --secondary-color: #138808; /* ఆకుపచ్చ */
-            --dark-color: #000080; /* ముదురు నీలం */
-            --light-bg: #fffaf4;
+            --primary-color: #ff9933; 
+            --secondary-color: #138808; 
+            --dark-color: #000080; 
+            --maroon: #b71c1c; 
+            --light-bg: #fffbf7;
         }
         * {
             box-sizing: border-box;
@@ -18,19 +19,19 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         body {
-            background-color: #f5f5f5;
+            background-color: #f7f9fa;
             color: #333;
             line-height: 1.6;
-            padding: 15px;
+            padding: 10px;
         }
         .container {
-            max-width: 550px;
+            max-width: 600px;
             margin: 0 auto;
             background: white;
-            border-radius: 15px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-            border: 1px solid #ddd;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+            border: 2px solid #ffe0b2;
         }
         .header {
             background: linear-gradient(135deg, #fff3e0, #ffffff, #e8f5e9);
@@ -38,29 +39,45 @@
             text-align: center;
             border-bottom: 4px solid var(--primary-color);
         }
-        .logo-container {
-            width: 110px;
-            height: 110px;
-            margin: 0 auto 15px;
+        .top-logos {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 0 10px;
+        }
+        .logo-box {
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
             background: white;
-            padding: 5px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            padding: 4px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border: 2px solid var(--primary-color);
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 2px solid var(--primary-color);
+            overflow: hidden;
         }
-        .logo-container img {
-            max-width: 100%;
-            max-height: 100%;
-            border-radius: 50%;
+        .logo-box img {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
+            border-radius: 50%;
+        }
+        .logo-title {
+            font-size: 11px;
+            font-weight: bold;
+            color: var(--maroon);
+            margin-top: 2px;
+        }
+        .logo-wrapper {
+            text-align: center;
         }
         .header h1 {
-            color: #b71c1c; /* ఆధ్యాత్మిక ఎరుపు */
+            color: var(--maroon);
             font-size: 24px;
-            margin-bottom: 8px;
+            margin-bottom: 5px;
             font-weight: bold;
         }
         .header p {
@@ -71,55 +88,124 @@
         .content {
             padding: 20px;
         }
+        .info-tag {
+            display: block;
+            background: #fff3e0;
+            color: #e65100;
+            padding: 8px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+            border: 1px dashed #ffe0b2;
+        }
         .section {
             margin-bottom: 25px;
-            padding: 18px;
-            border-radius: 12px;
+            padding: 20px;
+            border-radius: 15px;
             background: var(--light-bg);
-            border-left: 5px solid var(--primary-color);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+            border-left: 6px solid var(--primary-color);
         }
         .section-title {
-            color: #b71c1c;
+            color: var(--maroon);
             margin-bottom: 12px;
-            font-size: 19px;
+            font-size: 20px;
             border-bottom: 2px solid #ffe0b2;
-            padding-bottom: 5px;
+            padding-bottom: 6px;
             font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
-        .editable-text {
-            outline: none;
-            padding: 4px;
-            border-radius: 4px;
-            display: block;
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 15px 0;
         }
-        .editable-text:focus {
-            background: #fff;
-            border: 1px dashed var(--primary-color);
+        .photo-card {
+            background: white;
+            border: 1px solid #ffe0b2;
+            border-radius: 10px;
+            padding: 8px;
+            text-align: center;
+        }
+        .photo-slot {
+            width: 100%;
+            height: 140px;
+            background: #f0f0f0;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 1px dashed #ccc;
+        }
+        .photo-slot img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .photo-caption {
+            font-size: 13px;
+            font-weight: bold;
+            color: #555;
+        }
+        .live-box {
+            background: #e3f2fd;
+            border-left-color: var(--dark-color);
+        }
+        .live-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: #d32f2f;
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-top: 12px;
+            font-size: 16px;
+            box-shadow: 0 4px 12 rgba(211,47,47,0.3);
+        }
+        .live-pulse {
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(0.8); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(0.8); opacity: 0.5; }
         }
         .timer-container {
             text-align: center;
-            background: #f1f8e9;
+            background: #e8f5e9;
             border-left-color: var(--secondary-color);
         }
         .timer-display {
-            font-size: 42px;
+            font-size: 46px;
             font-weight: bold;
             color: var(--dark-color);
-            margin: 12px 0;
+            margin: 15px 0;
             font-family: monospace;
             background: white;
             display: inline-block;
-            padding: 0 20px;
-            border-radius: 8px;
-            border: 1px solid #dcedc8;
+            padding: 5px 25px;
+            border-radius: 10px;
+            border: 2px solid #c8e6c9;
         }
         .btn-group {
             display: flex;
             justify-content: center;
             gap: 10px;
             flex-wrap: wrap;
-            margin-top: 10px;
         }
         button {
             padding: 10px 18px;
@@ -130,109 +216,123 @@
             font-weight: bold;
             cursor: pointer;
             font-size: 14px;
-            transition: all 0.2s;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        button:hover {
-            background-color: #e68a00;
-        }
-        button.bg-sec {
-            background-color: #d32f2f; /* Red for Stop */
-        }
-        button.bg-sec:hover {
-            background-color: #b71c1c;
-        }
+        button.stop-btn { background-color: #555; }
         .bank-details {
-            font-size: 15px;
-            background: #e1f5fe;
-            border-left-color: var(--dark-color);
+            background: #fffde7;
+            border-left-color: #fbc02d;
         }
         .bank-box {
             margin-top: 12px;
             background: white;
             padding: 15px;
-            border-radius: 8px;
-            border: 1px solid #b3e5fc;
+            border-radius: 10px;
+            border: 1px solid #fff59d;
         }
         .bank-box p {
             margin-bottom: 6px;
             font-size: 14px;
+            border-bottom: 1px dashed #f5f5f5;
+            padding-bottom: 4px;
         }
         .footer {
             text-align: center;
             padding: 20px;
-            background: #212121;
-            color: #ccc;
+            background: #1a1a1a;
+            color: #bbb;
             font-size: 13px;
-            border-top: 3px solid var(--secondary-color);
+            border-top: 4px solid var(--secondary-color);
         }
-        .info-tag {
-            display: block;
-            background: #fff3e0;
-            color: #e65100;
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 12px;
-            font-weight: bold;
-            margin-bottom: 15px;
-            text-align: center;
-            border: 1px dashed #ffe0b2;
-        }
+        .editable-text { outline: none; }
+        .editable-text:focus { background: #fff; border: 1px dashed var(--primary-color); }
     </style>
 </head>
 <body>
 
 <div class="container">
+    
     <div class="header">
-        <div class="logo-container">
-            <img src="NEST.jpeg" alt="శ్రీ ధнвантари మహా పిరమిడ్ లోగో">
+        <div class="top-logos">
+            <div class="logo-wrapper">
+                <div class="logo-box">
+                    <img src="NEST.jpeg" alt="ట్రస్ట్ లోగో">
+                </div>
+                <div class="logo-title">ధన్వంతరి ట్రస్ట్</div>
+            </div>
+            <div class="logo-wrapper">
+                <div class="logo-box">
+                    <img src="patriji.jpeg" alt="బ్రహ్మర్షి పత్రీజీ" onerror="this.src='https://via.placeholder.com/150?text=Patriji+Photo'">
+                </div>
+                <div class="logo-title">బ్రహ్మర్షి పత్రీజీ</div>
+            </div>
         </div>
         <h1 class="editable-text" contenteditable="true">శ్రీ ధన్వంతరి మహా పిరమిడ్ ధ్యాన కేంద్రం</h1>
         <p class="editable-text" contenteditable="true">నెల్లూరు, ఆంధ్రప్రదేశ్ (రిజిస్టర్డ్ ఛారిటబుల్ ట్రస్ట్)</p>
     </div>
 
     <div class="content">
-        <span class="info-tag">💡 గమనిక: కింద ఉన్న ఏ సమాచారాన్నైనా మీరు క్లిక్ చేసి మార్చుకోవచ్చు!</span>
+        <span class="info-tag">💡 గమనిక: మార్పులు చేయాలనుకుంటే ఏ టెక్స్ట్‌నైనా నేరుగా క్లిక్ చేసి ఎడిట్ చేయవచ్చు!</span>
 
         <div class="section">
-            <h2 class="section-title">ధ్యాన మహా యజ్ఞం</h2>
+            <h2 class="section-title">✨ ధ్యాన మహా యజ్ఞం</h2>
             <p class="editable-text" contenteditable="true">సమస్త మానవాళి శ్రేయస్సు కొరకు, సంపూర్ణ ఆరోగ్య ప్రాప్తి కొరకు మన కేంద్రంలో ప్రతిరోజూ ఉచిత సమూహ ధ్యాన సాధన మరియు ఆన్‌లైన్ సత్సంగాలు నిర్వహించబడుతున్నాయి. పిరమిడ్ శక్తి ద్వారా అపారమైన మానసిక ప్రశాంతతను పొందండి.</p>
         </div>
 
-        <div class="section" style="border-left-color: var(--dark-color);">
-            <h2 class="section-title">📍 రాబోయే కార్యక్రమాలు / సత్సంగం</h2>
-            <p style="margin-bottom: 5px;"><strong>సమయం:</strong> <span class="editable-text" contenteditable="true" style="display:inline;">ప్రతిరోజు సాయంత్రం 6:00 గంటలకు</span></p>
-            <p style="margin-bottom: 5px;"><strong>వేదిక:</strong> <span class="editable-text" contenteditable="true" style="display:inline;">యూట్యూబ్ లైవ్ (ధన్వంతరి పిరమిడ్ ఛానల్)</span></p>
-            <p class="editable-text" contenteditable="true" style="margin-top: 8px; color: #666; font-size: 13px;">*హెచ్చరిక: వివరాల కోసం మా యూట్యూబ్ ఛానల్‌ని సబ్‌స్క్రైబ్ చేసుకోండి.</p>
+        <div class="section" style="border-left-color: var(--secondary-color);">
+            <h2 class="section-title">📸 చిత్ర మాలిక (Gallery)</h2>
+            <div class="photo-gallery">
+                <div class="photo-card">
+                    <div class="photo-slot">
+                        <img src="patriji_grand.jpeg" alt="బ్రహ్మర్షి పత్రీజీ" onerror="this.src='https://via.placeholder.com/150?text=Patriji+Photo'">
+                    </div>
+                    <div class="photo-caption">బ్రహ్మర్షి పత్రీజీ</div>
+                </div>
+                <div class="photo-card">
+                    <div class="photo-slot">
+                        <img src="pyramid.jpeg" alt="మха పిరమిడ్" onerror="this.src='https://via.placeholder.com/150?text=Pyramid+Photo'">
+                    </div>
+                    <div class="photo-caption">మహా పిరమిడ్ హాల్</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section live-box">
+            <h2 class="section-title">🔴 ఆన్‌లైన్ లైవ్ సత్సంగం</h2>
+            <p><strong>సమయం:</strong> <span class="editable-text" contenteditable="true">ప్రతిరోజు సాయంత్రం 6:00 గంటలకు</span></p>
+            <p><strong>వేదిక:</strong> <span class="editable-text" contenteditable="true">యూట్యూబ్ లైవ్ ప్రసారం</span></p>
+            
+            <a href="https://www.youtube.com/@dhanvantaripyramid" target="_blank" class="live-btn">
+                <div class="live-pulse"></div>
+                సత్సంగంలో జాయిన్ అవ్వండి (Click Here)
+            </a>
         </div>
 
         <div class="section timer-container">
             <h2 class="section-title">🧘 స్వీయ ధ్యాన టైమర్</h2>
-            <p>ధ్యానంలో కూర్చోవడానికి సమయాన్ని ఎంచుకోండి:</p>
             <div class="timer-display" id="display">00:00</div>
             <div class="btn-group">
                 <button onclick="setTimer(3)">3 నిమిషాలు</button>
                 <button onclick="setTimer(5)">5 నిమిషాలు</button>
                 <button onclick="setTimer(10)">10 నిమిషాలు</button>
-                <button class="bg-sec" onclick="stopTimer()">ఆపు (Stop)</button>
+                <button class="stop-btn" onclick="stopTimer()">ఆపు (Stop)</button>
             </div>
         </div>
 
         <div class="section bank-details">
             <h2 class="section-title">🙏 విరాళాలు & సేవా కార్యక్రమాలు</h2>
-            <p class="editable-text" contenteditable="true">మన ట్రస్ట్ ద్వారా జరుగుతున్న పిరమిడ్ నిర్మాణం మరియు అన్నదాన సేవలకు మీ వంతు సహాయం అందించవచ్చు. మన ట్రస్ట్‌కు 12A మరియు 80G ఆదాయపు పన్ను మినహాయింపు సర్టిఫికేట్లు కలవు.</p>
+            <p class="editable-text" contenteditable="true">మన ట్రస్ట్ ద్వారా జరుగుతున్న పిరమిడ్ నిర్మాణం మరియు అన్నదాన سేవలకు మీ వంతు సహాయం అందించవచ్చు. మన ట్రస్ట్‌కు 12A మరియు 80G ఆదాయపు పన్ను మినహాయింపు సర్టిఫికేట్లు కలవు.</p>
             
             <div class="bank-box">
                 <p><strong>ట్రస్ట్ పేరు:</strong> Dhanvantari Pyramid Trust</p>
                 <p><strong>బ్యాంక్ పేరు:</strong> State Bank of India (SBI)</p>
-                <p><strong>ఖాతా సంఖ్య:</strong> 00000000000000 (సరిచేసుకోండి)</p>
+                <p><strong>ఖాతา సంఖ్య:</strong> 00000000000000 (సరిచేసుకోండి)</p>
                 <p><strong>IFSC కోడ్:</strong> SBIN0000000</p>
             </div>
         </div>
     </div>
 
     <div class="footer">
-        <p>© 2026 శ్రీ ధన్వంతరి మహా పిరమిడ్ ధ్యాన కేంద్రం. సర్వే జనాః సుఖినోభవంతు.</p>
+        <p>© 2026 శ్రీ ధнвантари మహా పిరమిడ్ ధ్యాన కేంద్రం. సర్వే జనాః సుఖినోభవంతు.</p>
     </div>
 </div>
 
@@ -248,11 +348,11 @@
             let gainNode = audioCtx.createGain();
             oscillator.type = 'sine';
             oscillator.frequency.setValueAtTime(136.1, audioCtx.currentTime); 
-            gainNode.gain.setValueAtTime(0.08, audioCtx.currentTime);
+            gainNode.gain.setValueAtTime(0.06, audioCtx.currentTime);
             oscillator.connect(gainNode);
             gainNode.connect(audioCtx.destination);
             oscillator.start();
-        } catch(e) { console.log("Audio error"); }
+        } catch(e) {}
     }
 
     function playBellSound() {
@@ -285,7 +385,7 @@
                 clearInterval(countdown);
                 if(oscillator) { try{oscillator.stop();}catch(e){} }
                 playBellSound();
-                alert("ధ్యాన సమయం పూర్తయింది. ప్రశాంతంగా కళ్ళు తెరవండి 🙏");
+                alert("ధ్యాన సమయం పూర్తయింది 🙏");
             }
         }, 1000);
     }
