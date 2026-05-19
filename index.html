@@ -6,10 +6,10 @@
     <title>శ్రీ ధన్వంతరి మహా పిరమిడ్ ధ్యాన కేంద్రం</title>
     <style>
         :root {
-            --primary-color: #ff9933;
-            --secondary-color: #138808;
-            --dark-color: #000080;
-            --light-bg: #f9f9f9;
+            --primary-color: #ff9933; /* కాషాయం */
+            --secondary-color: #138808; /* ఆకుపచ్చ */
+            --dark-color: #000080; /* ముదురు నీలం */
+            --light-bg: #fffaf4;
         }
         * {
             box-sizing: border-box;
@@ -18,36 +18,38 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         body {
-            background-color: #f0f2f5;
+            background-color: #f5f5f5;
             color: #333;
             line-height: 1.6;
-            padding: 10px;
+            padding: 15px;
         }
         .container {
-            max-width: 600px;
+            max-width: 550px;
             margin: 0 auto;
             background: white;
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            border: 1px solid #ddd;
         }
         .header {
-            background: linear-gradient(135deg, var(--primary-color), #fff, var(--secondary-color));
-            padding: 20px;
+            background: linear-gradient(135deg, #fff3e0, #ffffff, #e8f5e9);
+            padding: 25px 20px;
             text-align: center;
-            border-bottom: 3px solid var(--dark-color);
+            border-bottom: 4px solid var(--primary-color);
         }
         .logo-container {
-            width: 120px;
-            height: 120px;
+            width: 110px;
+            height: 110px;
             margin: 0 auto 15px;
             border-radius: 50%;
             background: white;
             padding: 5px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             display: flex;
             align-items: center;
             justify-content: center;
+            border: 2px solid var(--primary-color);
         }
         .logo-container img {
             max-width: 100%;
@@ -56,100 +58,125 @@
             object-fit: cover;
         }
         .header h1 {
-            color: var(--dark-color);
+            color: #b71c1c; /* ఆధ్యాత్మిక ఎరుపు */
             font-size: 24px;
-            margin-bottom: 5px;
-            text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+            margin-bottom: 8px;
+            font-weight: bold;
         }
         .header p {
-            color: #444;
-            font-size: 14px;
-            font-weight: bold;
+            color: var(--dark-color);
+            font-size: 15px;
+            font-weight: 600;
         }
         .content {
             padding: 20px;
         }
         .section {
             margin-bottom: 25px;
-            padding: 15px;
-            border-radius: 10px;
+            padding: 18px;
+            border-radius: 12px;
             background: var(--light-bg);
             border-left: 5px solid var(--primary-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
         }
         .section-title {
-            color: var(--dark-color);
-            margin-bottom: 10px;
-            font-size: 18px;
-            border-bottom: 1px solid #ddd;
+            color: #b71c1c;
+            margin-bottom: 12px;
+            font-size: 19px;
+            border-bottom: 2px solid #ffe0b2;
             padding-bottom: 5px;
+            font-weight: bold;
         }
         .editable-text {
             outline: none;
-            padding: 5px;
+            padding: 4px;
             border-radius: 4px;
-            transition: background 0.3s;
+            display: block;
         }
         .editable-text:focus {
-            background: #fff3e0;
+            background: #fff;
             border: 1px dashed var(--primary-color);
         }
         .timer-container {
             text-align: center;
-            background: #e8f5e9;
+            background: #f1f8e9;
             border-left-color: var(--secondary-color);
         }
         .timer-display {
-            font-size: 36px;
+            font-size: 42px;
             font-weight: bold;
             color: var(--dark-color);
-            margin: 10px 0;
+            margin: 12px 0;
+            font-family: monospace;
+            background: white;
+            display: inline-block;
+            padding: 0 20px;
+            border-radius: 8px;
+            border: 1px solid #dcedc8;
         }
         .btn-group {
             display: flex;
             justify-content: center;
             gap: 10px;
             flex-wrap: wrap;
+            margin-top: 10px;
         }
         button {
-            padding: 8px 15px;
+            padding: 10px 18px;
             border: none;
-            border-radius: 5px;
+            border-radius: 6px;
             background-color: var(--primary-color);
             color: white;
             font-weight: bold;
             cursor: pointer;
-            transition: background 0.2s;
+            font-size: 14px;
+            transition: all 0.2s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         button:hover {
             background-color: #e68a00;
         }
         button.bg-sec {
-            background-color: var(--secondary-color);
+            background-color: #d32f2f; /* Red for Stop */
         }
         button.bg-sec:hover {
-            background-color: #0f7006;
+            background-color: #b71c1c;
         }
         .bank-details {
-            font-size: 14px;
+            font-size: 15px;
             background: #e1f5fe;
             border-left-color: var(--dark-color);
         }
+        .bank-box {
+            margin-top: 12px;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #b3e5fc;
+        }
+        .bank-box p {
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
         .footer {
             text-align: center;
-            padding: 15px;
-            background: #333;
-            color: white;
-            font-size: 12px;
+            padding: 20px;
+            background: #212121;
+            color: #ccc;
+            font-size: 13px;
+            border-top: 3px solid var(--secondary-color);
         }
         .info-tag {
-            display: inline-block;
+            display: block;
             background: #fff3e0;
             color: #e65100;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 11px;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
             font-weight: bold;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            text-align: center;
+            border: 1px dashed #ffe0b2;
         }
     </style>
 </head>
@@ -158,29 +185,29 @@
 <div class="container">
     <div class="header">
         <div class="logo-container">
-            <img src="NEST.jpeg" alt="శ్రీ ధన్వంతరి మహా పిరమిడ్ లోగో">
+            <img src="NEST.jpeg" alt="శ్రీ ధнвантари మహా పిరమిడ్ లోగో">
         </div>
         <h1 class="editable-text" contenteditable="true">శ్రీ ధన్వంతరి మహా పిరమిడ్ ధ్యాన కేంద్రం</h1>
         <p class="editable-text" contenteditable="true">నెల్లూరు, ఆంధ్రప్రదేశ్ (రిజిస్టర్డ్ ఛారిటబుల్ ట్రస్ట్)</p>
     </div>
 
     <div class="content">
-        <span class="info-tag">💡 గమనిక: కింద ఉన్న ఏ టెక్స్ట్‌నైనా క్లిక్ చేసి మీరు మార్చుకోవచ్చు!</span>
+        <span class="info-tag">💡 గమనిక: కింద ఉన్న ఏ సమాచారాన్నైనా మీరు క్లిక్ చేసి మార్చుకోవచ్చు!</span>
 
         <div class="section">
             <h2 class="section-title">ధ్యాన మహా యజ్ఞం</h2>
-            <p class="editable-text" contenteditable="true">సమస్త మానవాళి శ్రేయస్సు కొరకు, సంపూర్ణ ఆరోగ్య ప్రాప్తి కొరకు మన కేంద్రంలో ప్రతిరోజూ ఉచిత సామ団体 ధ్యాన సాధన మరియు ఆన్‌లైన్ సత్సంగాలు నిర్వహించబడుతున్నాయి. పిరమిడ్ శక్తి ద్వారా అపారమైన మానసిక ప్రశాంతతను పొందండి.</p>
+            <p class="editable-text" contenteditable="true">సమస్త మానవాళి శ్రేయస్సు కొరకు, సంపూర్ణ ఆరోగ్య ప్రాప్తి కొరకు మన కేంద్రంలో ప్రతిరోజూ ఉచిత సమూహ ధ్యాన సాధన మరియు ఆన్‌లైన్ సత్సంగాలు నిర్వహించబడుతున్నాయి. పిరమిడ్ శక్తి ద్వారా అపారమైన మానసిక ప్రశాంతతను పొందండి.</p>
         </div>
 
         <div class="section" style="border-left-color: var(--dark-color);">
             <h2 class="section-title">📍 రాబోయే కార్యక్రమాలు / సత్సంగం</h2>
-            <p><strong>సమయం:</strong> <span class="editable-text" contenteditable="true">ప్రతిరోజు సాయంత్రం 6:00 గంటలకు</span></p>
-            <p><strong>వేదిక:</strong> <span class="editable-text" contenteditable="true">యూట్యూబ్ లైవ్ (ధన్వంతరి పిరమిడ్ ఛానల్)</span></p>
-            <p class="editable-text" contenteditable="true" style="margin-top: 5px; color: #666;">*వివరాల కోసం మా యూట్యూబ్ ఛానల్‌ని సబ్‌స్క్రైబ్ చేసుకోండి.</p>
+            <p style="margin-bottom: 5px;"><strong>సమయం:</strong> <span class="editable-text" contenteditable="true" style="display:inline;">ప్రతిరోజు సాయంత్రం 6:00 గంటలకు</span></p>
+            <p style="margin-bottom: 5px;"><strong>వేదిక:</strong> <span class="editable-text" contenteditable="true" style="display:inline;">యూట్యూబ్ లైవ్ (ధన్వంతరి పిరమిడ్ ఛానల్)</span></p>
+            <p class="editable-text" contenteditable="true" style="margin-top: 8px; color: #666; font-size: 13px;">*హెచ్చరిక: వివరాల కోసం మా యూట్యూబ్ ఛానల్‌ని సబ్‌స్క్రైబ్ చేసుకోండి.</p>
         </div>
 
         <div class="section timer-container">
-            <h2 class="section-title">🧘 స్వీయ ధ్యాన టైమర్ (Meditation Timer)</h2>
+            <h2 class="section-title">🧘 స్వీయ ధ్యాన టైమర్</h2>
             <p>ధ్యానంలో కూర్చోవడానికి సమయాన్ని ఎంచుకోండి:</p>
             <div class="timer-display" id="display">00:00</div>
             <div class="btn-group">
@@ -194,11 +221,12 @@
         <div class="section bank-details">
             <h2 class="section-title">🙏 విరాళాలు & సేవా కార్యక్రమాలు</h2>
             <p class="editable-text" contenteditable="true">మన ట్రస్ట్ ద్వారా జరుగుతున్న పిరమిడ్ నిర్మాణం మరియు అన్నదాన సేవలకు మీ వంతు సహాయం అందించవచ్చు. మన ట్రస్ట్‌కు 12A మరియు 80G ఆదాయపు పన్ను మినహాయింపు సర్టిఫికేట్లు కలవు.</p>
-            <div style="margin-top: 10px; background: white; padding: 10px; border-radius: 5px; font-family: monospace;">
-                <p><strong>Trust Name:</strong> Dhanvantari Pyramid Trust</p>
-                <p><strong>Bank:</strong> State Bank of India (SBI)</p>
-                <p><strong>A/C No:</strong> 000000000000 (సరిచేసుకోండి)</p>
-                <p><strong>IFSC Code:</strong> SBIN0000000</p>
+            
+            <div class="bank-box">
+                <p><strong>ట్రస్ట్ పేరు:</strong> Dhanvantari Pyramid Trust</p>
+                <p><strong>బ్యాంక్ పేరు:</strong> State Bank of India (SBI)</p>
+                <p><strong>ఖాతా సంఖ్య:</strong> 00000000000000 (సరిచేసుకోండి)</p>
+                <p><strong>IFSC కోడ్:</strong> SBIN0000000</p>
             </div>
         </div>
     </div>
@@ -213,32 +241,27 @@
     let audioCtx;
     let oscillator;
 
-    // ప్రశాంతమైన ధ్యాన ధ్వని (సున్నితమైన హమ్మింగ్ సౌండ్)
     function playMeditationSound() {
         try {
             audioCtx = new (window.AudioContext || window.webkitAudioContext)();
             oscillator = audioCtx.createOscillator();
             let gainNode = audioCtx.createGain();
-            
             oscillator.type = 'sine';
-            oscillator.frequency.setValueAtTime(136.1, audioCtx.currentTime); // Om frequency (136.1 Hz)
-            
-            gainNode.gain.setValueAtTime(0.1, audioCtx.currentTime);
-            
+            oscillator.frequency.setValueAtTime(136.1, audioCtx.currentTime); 
+            gainNode.gain.setValueAtTime(0.08, audioCtx.currentTime);
             oscillator.connect(gainNode);
             gainNode.connect(audioCtx.destination);
             oscillator.start();
-        } catch(e) { console.log("Audio not supported"); }
+        } catch(e) { console.log("Audio error"); }
     }
 
-    // ముగింపు గంట శబ్దం
     function playBellSound() {
         if(audioCtx) {
             try {
                 let bellOsc = audioCtx.createOscillator();
                 let bellGain = audioCtx.createGain();
                 bellOsc.frequency.setValueAtTime(440, audioCtx.currentTime);
-                bellGain.gain.setValueAtTime(0.3, audioCtx.currentTime);
+                bellGain.gain.setValueAtTime(0.2, audioCtx.currentTime);
                 bellGain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 2);
                 bellOsc.connect(bellGain);
                 bellGain.connect(audioCtx.destination);
@@ -251,7 +274,6 @@
     function setTimer(minutes) {
         clearInterval(countdown);
         if(oscillator) { try{oscillator.stop();}catch(e){} }
-        
         playMeditationSound();
         let seconds = minutes * 60;
         displayTime(seconds);
@@ -259,7 +281,6 @@
         countdown = setInterval(() => {
             seconds--;
             displayTime(seconds);
-
             if (seconds <= 0) {
                 clearInterval(countdown);
                 if(oscillator) { try{oscillator.stop();}catch(e){} }
@@ -278,8 +299,7 @@
     function displayTime(seconds) {
         const mins = Math.floor(seconds / 60);
         const remainderSecs = seconds % 60;
-        const display = `${mins < 10 ? '0' : ''}${mins}:${remainderSecs < 10 ? '0' : ''}${remainderSecs}`;
-        document.getElementById('display').innerText = display;
+        document.getElementById('display').innerText = `${mins < 10 ? '0' : ''}${mins}:${remainderSecs < 10 ? '0' : ''}${remainderSecs}`;
     }
 </script>
 
